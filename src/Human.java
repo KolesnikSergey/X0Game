@@ -26,7 +26,7 @@ public class Human extends Player {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Set "+coordinateName+" coordinate:");
         localCoordinate = keyboard.nextInt();
-        if(localCoordinate != fieldSize || localCoordinate == 0) {
+        if(localCoordinate > fieldSize || localCoordinate == 0) {
             System.out.println("Coordinate is out of game field size!!!");
             return 0;
             //return some exception
