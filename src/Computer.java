@@ -3,13 +3,10 @@
  */
 public class Computer extends Player {
 
-    public Computer() {
-        setMashine(true);
-    }
-
     @Override
-    public boolean[][] setMoveToGameField(boolean [][] gameField, int maxValue) {
+    public char[][] setMoveToGameField(char [][] gameField, int maxValue) {
         //some actions
+        alreadyMoved();
         return gameField;
     }
 }

@@ -2,8 +2,7 @@
  * Created by kolesnik_s on 28.01.16.
  */
 abstract class Player {
-    private boolean isMashine;
-    private boolean isPlayerMove;
+    private boolean isPlayerMove = false;
 
     public boolean isPlayerMove() {
         return isPlayerMove;
@@ -13,13 +12,13 @@ abstract class Player {
         isPlayerMove = playerMove;
     }
 
-    public boolean isMashine() {
-        return isMashine;
+    public void alreadyMoved(){
+        setPlayerMove(false);
     }
 
-    public void setMashine(boolean mashine) {
-        isMashine = mashine;
+    public void nextMove() {
+        setPlayerMove(true);
     }
 
-    public abstract boolean[][] setMoveToGameField(boolean [][] gameField, int maxValue);
+    public abstract char[][] setMoveToGameField(char [][] gameField, int maxValue);
 }
