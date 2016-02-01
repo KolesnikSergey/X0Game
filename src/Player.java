@@ -2,23 +2,19 @@
  * Created by kolesnik_s on 28.01.16.
  */
 abstract class Player {
-    private boolean isPlayerMove = false;
+    int cordinateA;
+    int cordinateB;
 
-    public boolean isPlayerMove() {
-        return isPlayerMove;
+
+
+    protected abstract void getCordinates(char [][] gameField);
+
+    public abstract void move(char[] [] gameField);
+
+
+    protected void placeSighn(char [][] gameField, char sign){
+
+        gameField[this.cordinateB][this.cordinateA] = sign;
     }
 
-    public void setPlayerMove(boolean playerMove) {
-        isPlayerMove = playerMove;
-    }
-
-    public void alreadyMoved(){
-        setPlayerMove(false);
-    }
-
-    public void nextMove() {
-        setPlayerMove(true);
-    }
-
-    public abstract char[][] setMoveToGameField(char [][] gameField, int maxValue);
 }

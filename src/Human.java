@@ -5,17 +5,27 @@ import java.util.Scanner;
  */
 public class Human extends Player {
 
+
     @Override
-    public char [][] setMoveToGameField(char [][] gameField, int maxValue){
-        int firstCoordinate, secondCoordinate;
+    public void move(char[][] gameField) {
+        this.getCordinates(gameField);
+        this.placeSighn(gameField,'X');
 
-        firstCoordinate = setHumanCoordinates(maxValue, "A");
-        secondCoordinate = setHumanCoordinates(maxValue, "B");
 
-        gameField[firstCoordinate][secondCoordinate] = 'X';
-        alreadyMoved();
-        return gameField;
     }
+
+    @Override
+    public void placeSighn(char[][] gameField, char sign) {
+        super.placeSighn(gameField, sign);
+    }
+
+    @Override
+    public void getCordinates(char [] [] gameField) {
+    super.cordinateA = setHumanCoordinates(gameField.length,"A");
+    super.cordinateB = setHumanCoordinates(gameField.length,"B");
+    }
+
+
 
     private int setHumanCoordinates(int fieldSize, String coordinateName) {
         int localCoordinate = -1;
@@ -46,6 +56,6 @@ public class Human extends Player {
             return -1;
             //some exception
         }
-        return localCoordinate;
+        return localCoordinate-1;
     }
 }
