@@ -540,7 +540,7 @@
       <workItem from="1454077542715" duration="5969000" />
       <workItem from="1454144209101" duration="2570000" />
       <workItem from="1454240750104" duration="31112000" />
-      <workItem from="1454348625931" duration="2530000" />
+      <workItem from="1454348625931" duration="3082000" />
     </task>
     <task id="LOCAL-00001" summary="Error in checking out of fild size">
       <created>1454009463364</created>
@@ -550,10 +550,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42181000" />
+    <option name="totallyTimeSpent" value="42733000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
