@@ -10,6 +10,7 @@ import java.util.List;
 public class MinMax {
     private CalculateScore calculateScore;
     private int depthCount=0;
+    int maxScore;
 
     public MinMax() {
 
@@ -17,7 +18,8 @@ public class MinMax {
 
     }
 
-    public Cell calculateMove(char [] [] gameField,char player){
+    public Cell calculateMove(int [] [] gameField,int player){
+        maxScore=0;
         Cell[][] cellsField = generateCellsField(gameField);
 
         Cell cell = minMax(2,player,cellsField);
@@ -27,16 +29,19 @@ public class MinMax {
     }
 
 
-    public Cell minMax(int depth, char player, Cell [][] gameFieldCellsArray){
+    public Cell minMax(int depth, int player, Cell [][] CellsField){
 
-        Cell [] [] CellsArray=gameFieldCellsArray;
-        List<Cell> freeCellsList = generateFreeCells(gameFieldCellsArray);
-       if(freeCellsList.isEmpty()){
-            System.out.println("A++++++++++++");}
+        Cell [] [] CellsArray= CellsField;
+        List<Cell> freeCellsList = generateFreeCells(CellsField);
 
+        if (depthCount==0) {
+            System.out.println("freeCellsList");
+            for (Cell cell1 : freeCellsList) {
+                System.out.println(cell1.getContent()+"A"+(cell1.getCordinateA()+1)+"B"+(cell1.getCordinateB()+1));
+            }
+        }
         depthCount+=1;
-        int score=0;
-        int maxScore=0;
+        int score = 0;
         Cell bestCell=new Cell();
         bestCell.setScore(0);
         bestCell.setCordinateA(-1);
@@ -45,35 +50,50 @@ public class MinMax {
 
 
         if ( freeCellsList.isEmpty() || depth == 0){
-            score = calculateScore.calculateScore(gameFieldCellsArray,player);
+            score = calculateScore.calculateScore(CellsField,player);
             bestCell.setScore(score);
 
     }else {
-        for(Cell cell : freeCellsList){
-            CellsArray[cell.getCordinateA()][cell.getCordinateB()].setContent(player);
 
-            if (cell.getContent() == player){
-                Cell currentCell = minMax(depth-1,'X',CellsArray);
-                score = currentCell.getScore();
-                System.out.println("score"+score);
-                if (score>maxScore){
-                    System.out.println("bestScore" + score);
-                    bestCell.setScore(score);
-                    bestCell.setCordinateA(cell.getCordinateA());
-                    bestCell.setCordinateB(cell.getCordinateB());
+            for (Cell cell : freeCellsList) {
+
+                CellsArray[cell.getCordinateA()][cell.getCordinateB()].setContent(player);
+
+                if (player == 1) {
+                    int bestScore = -100000;
+                    Cell currentCell = minMax(depth - 1, player, CellsArray);
+                    score = currentCell.getScore();
+                    System.out.println("score" + score);
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestCell.setScore(bestScore);
+                        bestCell.setCordinateA(cell.getCordinateA());
+                        bestCell.setCordinateB(cell.getCordinateB());
+                    }
+
+                } else {
+
+                    player = 1;
+                    int bestScore = 100000;
+
+                    Cell currentCell = minMax(depth - 1, player, CellsArray);
+                    score = currentCell.getScore();
+
+                    if (score < bestScore) {
+                        bestScore = score;
+                        bestCell.setScore(bestScore);
+                        bestCell.setCordinateA(cell.getCordinateA());
+                        bestCell.setCordinateB(cell.getCordinateB());
+
+                    }
                 }
-            }else {
-                Cell currentCell = minMax(depth-1,'O',CellsArray);
-                score = currentCell.getScore();
-                if (score<maxScore){
-                    bestCell.setScore(score);
-                    bestCell.setCordinateA(currentCell.getCordinateA());
-                    bestCell.setCordinateB(currentCell.getCordinateB());
-                }
+
             }
+
         }
 
-    }
+
 
 
 
@@ -81,37 +101,29 @@ public class MinMax {
     }
 
 
-    private List<Cell> generateFreeCells(Cell [][] gameFieldCellsArray ){
-        Cell cell = new Cell();
+    private List<Cell> generateFreeCells(Cell [][] CellsField ){
+
         List<Cell> freeCellsList = new ArrayList<Cell>();
-        for (int i = 0; i <gameFieldCellsArray.length  ; i++) {
-            for (int j = 0; j <gameFieldCellsArray.length ; j++) {
+        for (int i = 0; i <CellsField.length  ; i++) {
+            for (int j = 0; j <CellsField.length ; j++) {
+                Cell cell = new Cell();
+                cell.setContent(CellsField[i][j].getContent());
+                cell.setCordinateA(CellsField[i][j].getCordinateA());
+                cell.setCordinateB(CellsField[i][j].getCordinateB());
 
-                cell = gameFieldCellsArray[i][j];
-                System.out.print("A" + cell.getCordinateA());
-                System.out.print(" B"+cell.getCordinateB());
-                System.out.println(" cell inside-" + cell.getContent() + "-");
-
-                char sign = cell.getContent();
-                char empty = ' ';
-               // System.out.println("sign-"+sign+"-");
-               // System.out.println("empty-"+empty+"-");
-
-                if ((cell.getContent()) == ' '){
-                    System.out.println("cell A="+cell.getCordinateA()+" cellB="+cell.getCordinateB());
+                if (cell.getContent()==0){
+                    //System.out.println("A="+cell.getCordinateA()+" cellB="+cell.getCordinateB()+"content"+cell.getContent());
                     freeCellsList.add(cell);
+
                 }
 
             }
         }
 
-        //for (Cell cell1: freeCellsList){
-        //    System.out.println("a"+cell1.getCordinateA());
-       // }
         return freeCellsList;
     }
 
-    private Cell[] [] generateCellsField(char[] [] gameField){
+    private Cell[] [] generateCellsField(int[] [] gameField){
 
 
         Cell[] [] cellsField = new  Cell[gameField.length][gameField.length];
@@ -119,7 +131,8 @@ public class MinMax {
 
         for (int i = 0; i < gameField.length; i++) {
             for (int j = 0; j < gameField.length; j++) {
-                char sign = gameField[i][j];
+                int sign = gameField[i][j];
+
                 Cell cell = new Cell();
                 cell.setContent(sign);
                 cell.setCordinateA(i);
@@ -127,6 +140,9 @@ public class MinMax {
                 cellsField[i][j]=cell;
             }
         }
+      //  System.out.println("cellsFeild");
+      //  DisplayGameField displayGameField = new DisplayGameField();
+       // displayGameField.printField(cellsField);
 
        return cellsField;
     }

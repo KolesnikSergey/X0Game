@@ -6,7 +6,7 @@ package minmax.cell;
 public class Cell {
     private int cordinateA;
     private int getCordinateB;
-    private char content;
+    private int content;
 
     public int getScore() {
         return score;
@@ -18,11 +18,11 @@ public class Cell {
 
     private int score;
 
-    public char getContent() {
+    public int getContent() {
         return content;
     }
 
-    public void setContent(char content) {
+    public void setContent(int content) {
         this.content = content;
     }
 

@@ -5,25 +5,27 @@ package game.checkWin;
  */
 public class ChekWin {
 
-    public boolean checkGame(char[] [] gameField){
-        if (this.chekPlayer(gameField, 'X')){
+    public boolean checkGame(int[] [] gameField){
+        int  human=1;
+        int computer=2;
+        if (this.chekPlayer(gameField, human)){
             System.out.println("X player WIN");
             return true;
         }else
-        if (this.chekPlayer(gameField,'O')){
+        if (this.chekPlayer(gameField,computer)){
             System.out.println("O player Win");
             return true;
         }else return false;
     }
 
-    public boolean chekPlayer(char[] [] gameField,char player){
+    public boolean chekPlayer(int[] [] gameField,int player){
         if (checkColumn(gameField,player) || checkRow(gameField,player) || checkDiagonal(gameField,player)){
             return true;
         }
         else return false;
     }
 
-    private boolean checkColumn(char[] [] gameField, char player){
+    private boolean checkColumn(int[] [] gameField, int player){
         boolean result=false;
         int[] column = new int[gameField.length];
 
@@ -31,7 +33,7 @@ public class ChekWin {
 
             for (int i = 0; i <gameField.length ; i++) {
 
-                char sighn = gameField[i][j];// cheking for J  and  I
+                int sighn = gameField[i][j];// cheking for J  and  I
 
             if ( sighn == player ) column[j]+=1;
             }
@@ -45,14 +47,14 @@ public class ChekWin {
         }
         return result;}
 
-    private boolean checkRow(char[] [] gameField, char player){
+    private boolean checkRow(int[] [] gameField, int player){
         boolean result=false;
         int[] row = new int[gameField.length];
 
         for (int i = 0; i <gameField.length ; i++) {
 
             for (int j = 0; j <gameField.length ; j++) {
-                char sighn = gameField[i][j];
+                int sighn = gameField[i][j];
                 if ( sighn == player ) row[i]+=1;
             }
             //System.out.println("row["+ (i+1) +"] ="+ row[i]);
@@ -66,7 +68,7 @@ public class ChekWin {
 
 
 
-    private boolean checkDiagonal(char[] [] gameField, char player){
+    private boolean checkDiagonal(int[] [] gameField, int player){
         boolean result=false;
         int diagonal = 0;
         int reverseDiagonal = 0;
@@ -75,11 +77,11 @@ public class ChekWin {
 
             for (int j = 0; j <gameField.length ; j++) {
                 if (i==j){
-                    char sighn = gameField[i][j];
+                    int sighn = gameField[i][j];
                     if ( sighn == player ) diagonal+=1;
                 }
                 if ( ( j + j ) == (gameField.length-1) ){
-                    char sighn = gameField[i][j];
+                    int sighn = gameField[i][j];
                     if ( sighn == player ) reverseDiagonal+=1;
                 }
 

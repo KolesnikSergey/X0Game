@@ -7,12 +7,12 @@ abstract class Player {
 
 
 
-    protected abstract void getCordinates(char [][] gameField);
+    protected abstract void getCordinates(int [][] gameField);
 
-    public abstract void move(char[] [] gameField);
+    public abstract void move(int[] [] gameField);
 
 
-    protected void placeSighn(char [][] gameField, char sign){
+    protected void placeSighn(int [][] gameField, int sign){
 
         gameField[this.cordinateB][this.cordinateA] = sign;
     }

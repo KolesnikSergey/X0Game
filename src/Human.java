@@ -7,20 +7,21 @@ public class Human extends Player {
 
 
     @Override
-    public void move(char[][] gameField) {
+    public void move(int[][] gameField) {
         this.getCordinates(gameField);
-        this.placeSighn(gameField,'X');
+        int humanSign=1;
+        this.placeSighn(gameField,humanSign);
 
 
     }
 
     @Override
-    public void placeSighn(char[][] gameField, char sign) {
+    public void placeSighn(int[][] gameField, int sign) {
         super.placeSighn(gameField, sign);
     }
 
     @Override
-    public void getCordinates(char [] [] gameField) {
+    public void getCordinates(int [] [] gameField) {
     super.cordinateA = setHumanCoordinates(gameField.length,"A");
     super.cordinateB = setHumanCoordinates(gameField.length,"B");
     }

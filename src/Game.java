@@ -4,7 +4,7 @@ import game.checkWin.ChekWin;
  * Created by kolesnik_s on 28.01.16.
  */
 public class Game {
-    private char[][] gameField ;
+    private int [][] gameField ;
     private Player human;
     private Player computer;
     private ChekWin chekWin;
@@ -12,7 +12,7 @@ public class Game {
 
     public Game(int size) {
 
-        this.gameField = new char [size][size];
+        this.gameField = new int [size][size];
 
     }
 
