@@ -6,6 +6,8 @@ import model.Computer;
 import model.Human;
 import model.Player;
 
+import java.util.Scanner;
+
 /**
  * Created by kolesnik_s on 28.01.16.
  */
@@ -40,28 +42,53 @@ public class Game {
         /**
          * Initialize first player move in future
          * it can be some random value.
-         */
+         */boolean gameOver =false;
         displayGameField.printField(gameField);
-        while (checkWin.checkGame(gameField)!= true) {
-
-
-            human.move(gameField);
-            displayGameField.printField(gameField);
-
-            if (checkWin.checkGame(gameField)==true) {
+        do{
                 displayGameField.printField(gameField);
-                break;
+
+
+                human.move(gameField);
+
+
+                if (checkWin.checkGame(gameField)==true) {
+                    gameOver=true;
+                }else {
+
+
+                computer.move(gameField);
+                displayGameField.printField(gameField);
+                    if (checkWin.checkGame(gameField)==true){
+                        gameOver=true;
+                    }
+                }
+
+
+            if (gameOver == true) {
+                int player=1;
+                boolean player1Win = checkWin.checkPlayer(gameField,player);
+                if(player1Win == true){
+                    System.out.println("Player X win");}
+                else {
+                    System.out.println("Player 0 win");
+                }
+
+                System.out.println("Game over! Play again \n 1- yes \n 2 - no");
+
+                Scanner keyboard = new Scanner(System.in);
+
+                int choise = keyboard.nextInt();
+                if (choise == 1) {
+                    gameOver=false;
+                }else {
+
+                        System.out.println("Thank you for playing");
+                    }
+
+
             }
 
-            computer.move(gameField);
-            displayGameField.printField(gameField);
-
-            if (checkWin.checkGame(gameField)==true) {
-                displayGameField.printField(gameField);
-                break;
-            }
-
-        }
+        }while (!gameOver);
 
 
 

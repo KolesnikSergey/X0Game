@@ -102,7 +102,7 @@ public class Human extends Player {
 
         Scanner keyboard = new Scanner(System.in);
 
-        int localCoordinate = keyboard.nextInt();;
+        int localCoordinate = keyboard.nextInt();
 
         if (localCoordinate > fieldSize || localCoordinate <= 0) {
 

@@ -8,13 +8,12 @@ public class CheckWin {
     public boolean checkGame(int[] [] gameField){
         int  human=1;
         int computer=2;
+
         if (this.checkPlayer(gameField, human)){
-            System.out.println("X player WIN");
             return true;
         }else
         if (this.checkPlayer(gameField, computer)){
-            System.out.println("O player Win");
-            return true;
+                        return true;
         }else return false;
     }
 

@@ -29,11 +29,11 @@ public class CheckWinTest {
     @org.junit.Test
     public void testCheckPlayer() throws Exception {
         int[][] gameField = {
-            {0, 0, 2},
-            {0, 2, 0},
-            {2, 0, 0}
+            {0, 0, 1},
+            {0, 1, 0},
+            {1, 0, 0}
     };
-        int player=2;
+        int player=1;
         final boolean relult = checkWin.checkPlayer(gameField, player);
 
         assertEquals(true,relult);

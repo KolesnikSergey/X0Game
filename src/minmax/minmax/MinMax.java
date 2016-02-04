@@ -28,7 +28,7 @@ public class MinMax {
 
         Cell[][] cellsField = generateCellsField(gameField);
 
-        Cell cell = minMax(3,player,cellsField);
+        Cell cell = minMax(6,player,cellsField);
 
         //System.out.println("move calc A"+(cell.getCordinateA()+1)+" CordB"+(cell.getCordinateB()+1));
         //System.out.println("depth count = " + depthCount);
