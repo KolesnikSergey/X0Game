@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69821a8c-eaf6-4905-99e9-d90a71ec494a" name="Default" comment="add ChekWin class">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/minmax/Score/CalculateScore.java" afterPath="$PROJECT_DIR$/src/minmax/Score/CalculateScore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/game/Game.java" afterPath="$PROJECT_DIR$/src/game/game/Game.java" />
     </list>
     <ignored path="x0Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="957" max-vertical-offset="2108">
-              <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.26618704" vertical-offset="685" max-vertical-offset="2108">
+              <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -99,17 +99,17 @@
       <file leaf-file-name="Human.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Human.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1467" max-vertical-offset="2074">
-              <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2074">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculateScore.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CalculateScore.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/minmax/Score/CalculateScore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36690646" vertical-offset="1258" max-vertical-offset="2992">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2992">
               <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
               <folding />
             </state>
@@ -173,10 +173,10 @@
         <option value="$PROJECT_DIR$/src/exeptions/NoFreeCellsException.java" />
         <option value="$PROJECT_DIR$/src/model/Computer.java" />
         <option value="$PROJECT_DIR$/src/model/Player.java" />
-        <option value="$PROJECT_DIR$/src/game/game/Game.java" />
         <option value="$PROJECT_DIR$/src/minmax/minmax/MinMax.java" />
         <option value="$PROJECT_DIR$/src/model/Human.java" />
         <option value="$PROJECT_DIR$/src/minmax/Score/CalculateScore.java" />
+        <option value="$PROJECT_DIR$/src/game/game/Game.java" />
       </list>
     </option>
   </component>
@@ -756,7 +756,7 @@
       <workItem from="1454526517194" duration="21389000" />
       <workItem from="1454601549648" duration="2310000" />
       <workItem from="1454608827776" duration="2291000" />
-      <workItem from="1454613598077" duration="8263000" />
+      <workItem from="1454613598077" duration="8456000" />
     </task>
     <task id="LOCAL-00001" summary="Error in checking out of fild size">
       <created>1454009463364</created>
@@ -766,7 +766,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97958000" />
+    <option name="totallyTimeSpent" value="98151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1165,14 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="957" max-vertical-offset="2108">
-          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/checkWin/CheckWin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1717">
@@ -1205,18 +1197,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Human.java">
+    <entry file="file://$PROJECT_DIR$/src/minmax/Score/CalculateScore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1467" max-vertical-offset="2074">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="2992">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/minmax/Score/CalculateScore.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Human.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36690646" vertical-offset="1258" max-vertical-offset="2992">
-          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2074">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26618704" vertical-offset="685" max-vertical-offset="2108">
+          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding />
         </state>
       </provider>

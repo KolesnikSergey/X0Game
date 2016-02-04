@@ -55,7 +55,7 @@ public class Game {
             } catch (InvalidDataException invalidDataException) {
                 gameOver=true;
             } catch (NoFreeCellsException e) {
-                e.printStackTrace();
+                gameOver=true;
             }
 
 
