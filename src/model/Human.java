@@ -1,8 +1,7 @@
 package model;
 
 import exeptions.CellNotEmptyExeption;
-import exeptions.IndexExeption;
-import game.displaygame.DisplayGameField;
+import exeptions.IndexException;
 
 import java.util.Scanner;
 
@@ -20,22 +19,27 @@ public class Human extends Player {
             try {
                 this.getCordinates(gameField);
                 count = 5;
-            } catch (CellNotEmptyExeption cellNotEmptyExeption) {
+            }catch (CellNotEmptyExeption cellNotEmptyExeption) {
                 count += 1;
                 cellNotEmptyExeption.printMessage();
                 System.out.println("Player 1 left "+(3-count)+" tries ");
+            }catch (IndexException indexException){
+                count=3;
+                indexException.printMessage();
             }
+
 
         if (count == 5) {
             int humanSign = 1;
             this.placeSighn(gameField, humanSign);
         } else {
+            System.out.println("Game Over!!!");
             for (int i = 0; i < gameField.length; i++) {
                 for (int j = 0; j < gameField.length; j++) {
                     gameField[i][j]=0;
                 }
             }
-            System.out.println("Game Over!!!");
+
         }
 
 
@@ -54,7 +58,7 @@ public class Human extends Player {
     }
 
     @Override
-    public void getCordinates(int [] [] gameField) throws CellNotEmptyExeption  {
+    public void getCordinates(int [] [] gameField) throws CellNotEmptyExeption,IndexException  {
     super.cordinateA = setHumanCoordinates(gameField.length,"A");
     super.cordinateB = setHumanCoordinates(gameField.length,"B");
         if (gameField[super.cordinateA][super.cordinateB]!= 0){
@@ -66,35 +70,44 @@ public class Human extends Player {
 
 
 
-    private int setHumanCoordinates(int fieldSize, String coordinateName){
+    private int setHumanCoordinates(int fieldSize, String coordinateName) throws IndexException {
         int localCoordinate = -1;
-        int tryCount = 3;
+        int tryCount = 0;
 
-        Scanner keyboard = new Scanner(System.in);
+
         System.out.println("Set "+coordinateName+" coordinate:");
-        while (tryCount > 0) {
-            localCoordinate = keyboard.nextInt();
-            if (localCoordinate > fieldSize || localCoordinate < 0) {
-                System.out.println("Coordinate is out of game field size.");
-                tryCount--;
-                switch (tryCount) {
-                    case 0:
-                        break;
-                    case 1:
-                        System.out.println("Last try:");
-                        break;
-                    default:
-                        System.out.println("Try again, left "+tryCount+" tries:");
-                }
-            } else {
-                break;
+        while (tryCount < 3) {
+            try {
+
+                localCoordinate = readLine(fieldSize);
+                tryCount=5;
+            } catch (IndexException indexException) {
+                tryCount+=1;
+                indexException.printMessage();
+                System.out.println("Player 1 left "+(3-tryCount)+" tries ");
             }
-        }
-        if (localCoordinate > fieldSize || localCoordinate < 0) {
+
+            }
+
+        if (tryCount==3) {
             System.out.println("GAME OVER.");
-            return -1;
+            throw  new IndexException("Game Over");
+
             //some exception
         }
         return localCoordinate-1;
+    }
+
+    private  int readLine(int fieldSize)throws IndexException {
+
+        Scanner keyboard = new Scanner(System.in);
+
+        int localCoordinate = keyboard.nextInt();;
+
+        if (localCoordinate > fieldSize || localCoordinate < 0) {
+
+            throw new IndexException("Coordinate is out of game field size.");
+        }
+        return localCoordinate;
     }
 }

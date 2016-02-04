@@ -1,7 +1,7 @@
 package model;
 
 import exeptions.CellNotEmptyExeption;
-import exeptions.IndexExeption;
+import exeptions.IndexException;
 
 /**
  * Created by kolesnik_s on 28.01.16.
@@ -12,7 +12,7 @@ abstract public class Player {
 
 
 
-    protected abstract void getCordinates(int [][] gameField) throws IndexExeption,CellNotEmptyExeption ;
+    protected abstract void getCordinates(int [][] gameField) throws IndexException,CellNotEmptyExeption ;
 
     public abstract void move(int[] [] gameField)  ;
 
