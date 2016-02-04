@@ -29,7 +29,7 @@ public class MinMax {
 
         Cell[][] cellsField = generateCellsField(gameField);
 
-        Cell cell = minMax(2,player,cellsField);
+        Cell cell = minMax(1,player,cellsField);
         if ((cell.getCordinateA()<0) || (     ( cell.getCordinateB())<0 )    ){throw new NoFreeCellsException(); }
 
         //System.out.println("move calc A"+(cell.getCordinateA()+1)+" CordB"+(cell.getCordinateB()+1));

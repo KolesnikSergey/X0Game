@@ -4,6 +4,7 @@ import exeptions.CellNotEmptyExeption;
 import exeptions.IndexException;
 import exeptions.InvalidDataException;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -102,12 +103,18 @@ public class Human extends Player {
     private  int readLine(int fieldSize)throws IndexException {
 
         Scanner keyboard = new Scanner(System.in);
+        int localCoordinate=-1;
 
-        int localCoordinate = keyboard.nextInt();
+        try {
+            localCoordinate = keyboard.nextInt();
+        } catch (InputMismatchException e){
+
+        }
+
 
         if (localCoordinate > fieldSize || localCoordinate <= 0) {
 
-            throw new IndexException("Coordinate is out of game field size.");
+            throw new IndexException(" Only integers from 1 to 3");
         }
         return localCoordinate;
     }
