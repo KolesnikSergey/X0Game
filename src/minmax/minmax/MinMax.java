@@ -1,5 +1,6 @@
 package minmax.minmax;
 
+import exeptions.NoFreeCellsException;
 import minmax.Score.CalculateScore;
 import minmax.cell.Cell;
 
@@ -22,13 +23,14 @@ public class MinMax {
 
     }
 
-    public Cell calculateMove(int [] [] gameField,int player){
+    public Cell calculateMove(int [] [] gameField,int player) throws NoFreeCellsException{
         maxScore=0;
         depthCount=0;
 
         Cell[][] cellsField = generateCellsField(gameField);
 
         Cell cell = minMax(6,player,cellsField);
+        if ((cell.getCordinateA()<0) || (     ( cell.getCordinateB())<0 )    ){throw new NoFreeCellsException(); }
 
         //System.out.println("move calc A"+(cell.getCordinateA()+1)+" CordB"+(cell.getCordinateB()+1));
         //System.out.println("depth count = " + depthCount);

@@ -1,6 +1,7 @@
 package game.game;
 
-import exeptions.InvalidDataExeption;
+import exeptions.InvalidDataException;
+import exeptions.NoFreeCellsException;
 import game.checkWin.CheckWin;
 import game.displaygame.DisplayGameField;
 import model.Computer;
@@ -51,22 +52,27 @@ public class Game {
 
             try {
                 human.move(gameField);
-            } catch (InvalidDataExeption invalidDataExeption) {
+            } catch (InvalidDataException invalidDataException) {
                 gameOver=true;
+            } catch (NoFreeCellsException e) {
+                e.printStackTrace();
             }
 
 
             if (checkWin.checkGame(gameField)==true) {
                     gameOver=true;
                 displayGameField.printField(gameField);
+
                 }else {
 
 
                 try {
                     computer.move(gameField);
-                } catch (InvalidDataExeption invalidDataExeption) {
+                } catch (InvalidDataException invalidDataException) {
                     gameOver=true;
                     displayGameField.printField(gameField);
+                } catch (NoFreeCellsException e) {
+                    gameOver=true;
                 }
 
                 displayGameField.printField(gameField);
@@ -79,10 +85,12 @@ public class Game {
 
             if (gameOver == true) {
                 int player=1;
-                boolean player1Win = checkWin.checkPlayer(gameField,player);
-                if(player1Win == true){
+
+                if(checkWin.checkPlayer(gameField,player)){
                     System.out.println("Player 1 win");}
-                else {
+
+                player=2;
+                if(checkWin.checkPlayer(gameField,player)) {
                     System.out.println("Player 2 win");
                 }
 

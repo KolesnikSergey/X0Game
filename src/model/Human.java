@@ -2,7 +2,7 @@ package model;
 
 import exeptions.CellNotEmptyExeption;
 import exeptions.IndexException;
-import exeptions.InvalidDataExeption;
+import exeptions.InvalidDataException;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Human extends Player {
 
 
     @Override
-    public void move(int[][] gameField) throws InvalidDataExeption{
+    public void move(int[][] gameField) throws InvalidDataException {
         //int [] [] gameField =  new int[][];
         int count = 0;
         while (count < 3)
@@ -59,7 +59,7 @@ public class Human extends Player {
     }
 
     @Override
-    public void getCordinates(int [] [] gameField) throws CellNotEmptyExeption,IndexException,InvalidDataExeption  {
+    public void getCordinates(int [] [] gameField) throws CellNotEmptyExeption,IndexException, InvalidDataException {
     super.cordinateA = setHumanCoordinates(gameField.length,"A");
     super.cordinateB = setHumanCoordinates(gameField.length,"B");
         if (gameField[super.cordinateA][super.cordinateB]!= 0){
@@ -71,7 +71,7 @@ public class Human extends Player {
 
 
 
-    private int setHumanCoordinates(int fieldSize, String coordinateName) throws IndexException,InvalidDataExeption {
+    private int setHumanCoordinates(int fieldSize, String coordinateName) throws IndexException, InvalidDataException {
         int localCoordinate = -1;
         int tryCount = 0;
 
@@ -92,7 +92,7 @@ public class Human extends Player {
 
         if (tryCount==3) {
 
-            throw  new InvalidDataExeption();
+            throw  new InvalidDataException();
 
             //some exception
         }

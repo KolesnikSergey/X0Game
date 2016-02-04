@@ -2,6 +2,7 @@ package model;
 
 
 import exeptions.CellNotEmptyExeption;
+import exeptions.NoFreeCellsException;
 import minmax.minmax.MinMax;
 import minmax.cell.Cell;
 
@@ -15,7 +16,7 @@ public class Computer extends Player {
 
 
     @Override
-    protected void getCordinates (int [] [] gameField) throws CellNotEmptyExeption{
+    protected void getCordinates (int [] [] gameField) throws CellNotEmptyExeption, NoFreeCellsException {
         MinMax minMax= new MinMax();
         Cell cell = new Cell();
 
@@ -31,22 +32,18 @@ public class Computer extends Player {
     }
 
     @Override
-    public void move(int[][] gameField) {
-        int count=0;
+    public void move(int[][] gameField) throws NoFreeCellsException{
 
-        while (count < 3)
-            try {
-                this.getCordinates(gameField);
-                count = 5;
-            } catch (CellNotEmptyExeption cellNotEmptyExeption) {
-                count += 1;
-                cellNotEmptyExeption.printMessage();
-                System.out.println("Player 2 left "+(3-count)+" tries ");
-            }
 
+        try {
+            this.getCordinates(gameField);
+        } catch (CellNotEmptyExeption cellNotEmptyExeption) {
+            cellNotEmptyExeption.printStackTrace();
+        }
 
 
         super.placeSighn(gameField, COMPUTER_SIGN);
 
-    }
+
+}
 }
