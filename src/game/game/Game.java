@@ -1,5 +1,6 @@
 package game.game;
 
+import exeptions.InvalidDataExeption;
 import game.checkWin.CheckWin;
 import game.displaygame.DisplayGameField;
 import model.Computer;
@@ -45,19 +46,31 @@ public class Game {
          */boolean gameOver =false;
         displayGameField.printField(gameField);
         do{
-                displayGameField.printField(gameField);
 
 
+
+            try {
                 human.move(gameField);
+            } catch (InvalidDataExeption invalidDataExeption) {
+                gameOver=true;
+            }
 
 
-                if (checkWin.checkGame(gameField)==true) {
+            if (checkWin.checkGame(gameField)==true) {
                     gameOver=true;
+                displayGameField.printField(gameField);
                 }else {
 
 
-                computer.move(gameField);
+                try {
+                    computer.move(gameField);
+                } catch (InvalidDataExeption invalidDataExeption) {
+                    gameOver=true;
+                    displayGameField.printField(gameField);
+                }
+
                 displayGameField.printField(gameField);
+
                     if (checkWin.checkGame(gameField)==true){
                         gameOver=true;
                     }
@@ -68,9 +81,9 @@ public class Game {
                 int player=1;
                 boolean player1Win = checkWin.checkPlayer(gameField,player);
                 if(player1Win == true){
-                    System.out.println("Player X win");}
+                    System.out.println("Player 1 win");}
                 else {
-                    System.out.println("Player 0 win");
+                    System.out.println("Player 2 win");
                 }
 
                 System.out.println("Game over! Play again \n 1- yes \n 2 - no");
@@ -79,6 +92,12 @@ public class Game {
 
                 int choise = keyboard.nextInt();
                 if (choise == 1) {
+                    for (int i = 0; i < gameField.length; i++) {
+                        for (int j = 0; j < gameField.length; j++) {
+                            gameField[i][j]=0;
+                        }
+                    }
+                    displayGameField.printField(gameField);
                     gameOver=false;
                 }else {
 
