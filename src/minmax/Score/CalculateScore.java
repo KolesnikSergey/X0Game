@@ -46,35 +46,41 @@ public class CalculateScore {
                 if (score == 1) {   // cell1 is mySeed
                     score = 10;
                 } else if (score == -1) {  // cell1 is oppSeed
-                    return 0;
+
                 } else {  // cell1 is empty
-                    score = 1;
+                    score = 0;
                 }
             } else if (sighn == 1) {
                 if (score == -1) { // cell1 is oppSeed
                     score = -10;
                 } else if (score == 1) { // cell1 is mySeed
-                    return 0;
+
                 } else {  // cell1 is empty
-                    score = -1;
+                    score = 0;
                 }
             }
         }
         // Third cell
         if (i==2) {
             if (sighn == 2) {
-                if (score > 0) {  // cell1 and/or cell2 is mySeed
+                if (score == 1) {  // cell1 and/or cell2 is mySeed
                     score *= 10;
-                } else if (score < 0) {  // cell1 and/or cell2 is oppSeed
-                    return 0;
-                } else {  // cell1 and cell2 are empty
-                    score = 1;
+
+                }else if (score== 10) {
+                    score *= 13;
+                }
+                else if (score == -1) {  // cell1 and/or cell2 is oppSeed
+                    score*=10;
+                } else if (score==-10){  // cell1 and cell2 are oppSeed
+                    score*= 10;
                 }
             } else if (sighn == 1) {
-                if (score < 0) {  // cell1 and/or cell2 is oppSeed
+                if (score == -1) {  // cell1 and/or cell2 is oppSeed
                     score *= 10;
-                } else if (score > 1) {  // cell1 and/or cell2 is mySeed
-                    return 0;
+                } else if (score==-10){
+                    score*=10;
+                }else if (score == 1) {  // cell1 and/or cell2 is mySeed
+                  score*=10;
                 } else {  // cell1 and cell2 are empty
                     score = -1;
                 }
