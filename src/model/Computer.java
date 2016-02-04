@@ -1,3 +1,9 @@
+package model;
+
+
+import exeptions.CellNotEmptyExeption;
+import exeptions.IndexExeption;
+import minmax.minmax.MinMax;
 import minmax.cell.Cell;
 
 /**
@@ -24,6 +30,8 @@ public class Computer extends Player {
 
 
         this.getCordinates(gameField);
+
         super.placeSighn(gameField, COMPUTER_SIGN);
+
     }
 }

@@ -3,22 +3,22 @@ package game.checkWin;
 /**
  * Created by Vadim on 31.01.2016.
  */
-public class ChekWin {
+public class CheckWin {
 
     public boolean checkGame(int[] [] gameField){
         int  human=1;
         int computer=2;
-        if (this.chekPlayer(gameField, human)){
+        if (this.checkPlayer(gameField, human)){
             System.out.println("X player WIN");
             return true;
         }else
-        if (this.chekPlayer(gameField,computer)){
+        if (this.checkPlayer(gameField, computer)){
             System.out.println("O player Win");
             return true;
         }else return false;
     }
 
-    public boolean chekPlayer(int[] [] gameField,int player){
+    public boolean checkPlayer(int[][] gameField, int player){
         if (checkColumn(gameField,player) || checkRow(gameField,player) || checkDiagonal(gameField,player)){
             return true;
         }
@@ -80,7 +80,7 @@ public class ChekWin {
                     int sighn = gameField[i][j];
                     if ( sighn == player ) diagonal+=1;
                 }
-                if ( ( j + j ) == (gameField.length-1) ){
+                if ( ( j + i ) == (gameField.length-1) ){
                     int sighn = gameField[i][j];
                     if ( sighn == player ) reverseDiagonal+=1;
                 }
@@ -89,8 +89,6 @@ public class ChekWin {
             }
 
         }
-        //System.out.println("diagonal ="+ diagonal);
-        //System.out.println("reverseDiagonal ="+ reverseDiagonal);
         if ( (diagonal==gameField.length) || (reverseDiagonal==gameField.length) ){
             result=true;
         }
