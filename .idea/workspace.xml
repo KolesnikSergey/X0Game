@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69821a8c-eaf6-4905-99e9-d90a71ec494a" name="Default" comment="add ChekWin class">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Human.java" afterPath="$PROJECT_DIR$/src/model/Human.java" />
     </list>
     <ignored path="x0Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +59,8 @@
       <file leaf-file-name="Human.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Human.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2023">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="1972">
+              <caret line="106" column="61" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -69,11 +69,21 @@
       <file leaf-file-name="Computer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Computer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17789292" vertical-offset="356" max-vertical-offset="986">
+            <state vertical-scroll-proportion="0.44041452" vertical-offset="204" max-vertical-offset="986">
               <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisplayGameField.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/displaygame/DisplayGameField.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="730" max-vertical-offset="1683">
+              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +136,6 @@
         <option value="$PROJECT_DIR$/src/game/checkWin/ChekWinTest.java" />
         <option value="$PROJECT_DIR$/src/exeptions/CellNotEmptyExeption.java" />
         <option value="$PROJECT_DIR$/src/model/Player.java" />
-        <option value="$PROJECT_DIR$/src/game/displaygame/DisplayGameField.java" />
         <option value="$PROJECT_DIR$/src/game/game/Game.java" />
         <option value="$PROJECT_DIR$/src/game/checkWin/ChekWin.java" />
         <option value="$PROJECT_DIR$/src/tests/ChekWinTest.java" />
@@ -134,8 +143,9 @@
         <option value="$PROJECT_DIR$/src/game/checkWin/CheckWin.java" />
         <option value="$PROJECT_DIR$/src/model/Computer.java" />
         <option value="$PROJECT_DIR$/src/exeptions/IndexException.java" />
-        <option value="$PROJECT_DIR$/src/model/Human.java" />
         <option value="$PROJECT_DIR$/src/minmax/minmax/MinMax.java" />
+        <option value="$PROJECT_DIR$/src/game/displaygame/DisplayGameField.java" />
+        <option value="$PROJECT_DIR$/src/model/Human.java" />
       </list>
     </option>
   </component>
@@ -258,6 +268,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="X0Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="X0Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="displaygame" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -625,7 +657,7 @@
       <workItem from="1454401906484" duration="5753000" />
       <workItem from="1454422835854" duration="7642000" />
       <workItem from="1454526517194" duration="21389000" />
-      <workItem from="1454601549648" duration="561000" />
+      <workItem from="1454601549648" duration="1134000" />
     </task>
     <task id="LOCAL-00001" summary="Error in checking out of fild size">
       <created>1454009463364</created>
@@ -635,11 +667,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85655000" />
+    <option name="totallyTimeSpent" value="86228000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -661,7 +693,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.9324547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="339" y="0" width="688" height="755" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.9324547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="339" y="0" width="688" height="755" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -719,6 +751,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="1275">
           <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -767,6 +800,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1275">
           <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,13 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/displaygame/DisplayGameField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42985612" vertical-offset="1104" max-vertical-offset="1683">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exeptions/IndexException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38169256" vertical-offset="0" max-vertical-offset="579">
@@ -1080,17 +1107,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/displaygame/DisplayGameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="730" max-vertical-offset="1683">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Human.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="923" max-vertical-offset="2023">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1393" max-vertical-offset="1972">
+          <caret line="106" column="61" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Computer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17789292" vertical-offset="356" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.44041452" vertical-offset="204" max-vertical-offset="986">
           <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />

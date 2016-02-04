@@ -104,7 +104,7 @@ public class Human extends Player {
 
         int localCoordinate = keyboard.nextInt();;
 
-        if (localCoordinate > fieldSize || localCoordinate < 0) {
+        if (localCoordinate > fieldSize || localCoordinate <= 0) {
 
             throw new IndexException("Coordinate is out of game field size.");
         }
