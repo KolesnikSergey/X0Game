@@ -1,6 +1,6 @@
 package minmax.minmax;
 
-import exeptions.NoFreeCellsException;
+import exceptions.NoFreeCellsException;
 import minmax.Score.CalculateScore;
 import minmax.cell.Cell;
 

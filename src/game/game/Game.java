@@ -1,7 +1,7 @@
 package game.game;
 
-import exeptions.InvalidDataException;
-import exeptions.NoFreeCellsException;
+import exceptions.InvalidDataException;
+import exceptions.NoFreeCellsException;
 import game.checkWin.CheckWin;
 import game.displaygame.DisplayGameField;
 import model.Computer;

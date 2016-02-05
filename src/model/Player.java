@@ -1,9 +1,9 @@
 package model;
 
-import exeptions.CellNotEmptyExeption;
-import exeptions.IndexException;
-import exeptions.InvalidDataException;
-import exeptions.NoFreeCellsException;
+import exceptions.CellNotEmptyExeption;
+import exceptions.IndexException;
+import exceptions.InvalidDataException;
+import exceptions.NoFreeCellsException;
 
 /**
  * Created by kolesnik_s on 28.01.16.

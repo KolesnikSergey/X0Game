@@ -1,8 +1,8 @@
 package model;
 
 
-import exeptions.CellNotEmptyExeption;
-import exeptions.NoFreeCellsException;
+import exceptions.CellNotEmptyExeption;
+import exceptions.NoFreeCellsException;
 import minmax.minmax.MinMax;
 import minmax.cell.Cell;
 

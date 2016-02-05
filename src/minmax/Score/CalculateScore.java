@@ -236,10 +236,6 @@ public class CalculateScore {
     public int calculateColumn(Cell[] [] cellsGameField,int column, int player){
 
         int score=0;
-
-
-
-
             for (int i = 0; i <cellsGameField.length ; i++) {
 
                 Cell cell = cellsGameField[i][column];

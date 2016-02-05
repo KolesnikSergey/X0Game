@@ -1,8 +1,8 @@
 package model;
 
-import exeptions.CellNotEmptyExeption;
-import exeptions.IndexException;
-import exeptions.InvalidDataException;
+import exceptions.CellNotEmptyExeption;
+import exceptions.IndexException;
+import exceptions.InvalidDataException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
