@@ -27,7 +27,30 @@ public class CalculateScore {
         return score;
     }
 
-    private int calculateLine(int i,Cell cell,int score){
+    public int calculateLineNew(int i,Cell cell,int score){
+        int player=cell.getContent();
+
+        if (i==0){
+            if (player==2){score=1;}
+        }
+
+        if (i==1) {
+            if (player == 2) {
+                if (score==1){score=10;}
+            }
+        }
+
+        if (i==2){
+            if (player==2){
+                if (score==10){score=100;}
+            }
+        }
+
+
+        return score;
+    }
+
+    public int calculateLine(int i,Cell cell,int score){
 
         int sighn = cell.getContent();
 
@@ -46,17 +69,19 @@ public class CalculateScore {
                 if (score == 1) {   // cell1 is mySeed
                     score = 10;
                 } else if (score == -1) {  // cell1 is oppSeed
-
-                } else {  // cell1 is empty
-                    score = 0;
+                score=1;
+                } else if (score==0){  // cell1 is empty
+                    score = 1;
                 }
             } else if (sighn == 1) {
                 if (score == -1) { // cell1 is oppSeed
                     score = -10;
                 } else if (score == 1) { // cell1 is mySeed
+                    score=-1;
+                } else {
+                 if (score==0){// cell1 is empty
+                     score = -1; }
 
-                } else {  // cell1 is empty
-                    score = 0;
                 }
             }
         }
@@ -66,11 +91,11 @@ public class CalculateScore {
                 if (score == 1) {  // cell1 and/or cell2 is mySeed
                     score *= 10;
 
-                }else if (score== 10) {
+                }else if (score == 10) {
                     score *= 13;
-                }
-                else if (score == -1) {  // cell1 and/or cell2 is oppSeed
-                    score*=10;
+
+                }else if (score == -1) {  // cell1 or cell2 is oppSeed
+                    score=1;
                 } else if (score==-10){  // cell1 and cell2 are oppSeed
                     score*= 10;
                 }
@@ -80,16 +105,18 @@ public class CalculateScore {
                 } else if (score==-10){
                     score*=10;
                 }else if (score == 1) {  // cell1 and/or cell2 is mySeed
-                  score*=10;
+                  score=1;
                 } else {  // cell1 and cell2 are empty
-                    score = -1;
+                    if (sighn==0){score = 0;}
                 }
+            }else if (score == 15){
+            score=20;
             }
         }
 
     return score;}
 
-    private int calculateColumn(Cell[] [] cellsGameField,int column, int player){
+    public int calculateColumn(Cell[] [] cellsGameField,int column, int player){
 
         int score=0;
 
@@ -108,7 +135,7 @@ public class CalculateScore {
         return score;
     }
 
-    private int calculateRow(Cell[] [] cellsGameField,int row, int player){
+    public int calculateRow(Cell[] [] cellsGameField,int row, int player){
 
         int score = 0;
 
@@ -122,7 +149,7 @@ public class CalculateScore {
 
         return score;}
 
-    private int calculateDiagonal(Cell[] [] cellsGameField, int player){
+    public int calculateDiagonal(Cell[] [] cellsGameField, int player){
         int score=0;
         int count=0;
         for (int i = 0; i <cellsGameField.length ; i++) {
@@ -146,7 +173,7 @@ public class CalculateScore {
         return score;
     }
 
-    private int calculateReverseDiagonal(Cell[] [] cellsGameField, int player){
+    public int calculateReverseDiagonal(Cell[] [] cellsGameField, int player){
         int score=0;
         int count=0;
         for (int i = 0; i <cellsGameField.length ; i++) {
