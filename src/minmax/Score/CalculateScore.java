@@ -12,40 +12,72 @@ public class CalculateScore {
 
         int score=0;
 
-        score += calculateColumn(gameField,0,player);
-        score += calculateColumn(gameField,1,player);
-        score += calculateColumn(gameField,2,player);
+        score += calculateColumn(gameField,0);
+        score += calculateColumn(gameField,1);
+        score += calculateColumn(gameField,2);
 
-        score+=calculateRow(gameField,0,player);
-        score+=calculateRow(gameField,1,player);
-        score+=calculateRow(gameField,2,player);
+        score+= calculateRow(gameField,0);
+        score+= calculateRow(gameField,1);
+        score+= calculateRow(gameField,2);
 
-        score+=calculateDiagonal(gameField,player);
-        score+=calculateReverseDiagonal(gameField,player);
+        score+= calculateDiagonal(gameField);
+        score+= calculateReverseDiagonal(gameField);
 
         
         return score;
     }
 
-    public int calculateLineNew(int i,Cell cell,int score){
-        int player=cell.getContent();
+    public int calculateLineVersion2(int i[],int score){
 
-        if (i==0){
-            if (player==2){score=1;}
-        }
+        // score 100
+        if (i[0]==2 && i[1]==2 && i[2]==2){score=500;}//2 2 2
+        //score 95
 
-        if (i==1) {
-            if (player == 2) {
-                if (score==1){score=10;}
-            }
-        }
+        if (i[0]==1 && i[1]==1 && i[2]==2){score=95;}// 1 1 2
+        if (i[0]==2 && i[1]==1 && i[2]==1){score=95;}// 2 1 1
+        if (i[0]==1 && i[1]==2 && i[2]==1){score=95;}// 1 2 1
 
-        if (i==2){
-            if (player==2){
-                if (score==10){score=100;}
-            }
-        }
+        //score 10
+        if (i[0]==2 && i[1]==2 && i[2]==0){score=10;}// 2 2 0
+        if (i[0]==0 && i[1]==2 && i[2]==2){score=10;}//0 2 2
+        if (i[0]==2 && i[1]==0 && i[2]==2){score=10;}//2 0 2
+        //score 1
+        if (i[0]==0 && i[1]==2 && i[2]==0){score=1;}// 0 2 0
+        if (i[0]==0 && i[1]==0 && i[2]==2){score=1;}// 0 0 2
+        if (i[0]==2 && i[1]==0 && i[2]==0){score=1;}// 2 0 0
 
+
+
+        //score -100
+        if (i[0]==1 && i[1]==1 && i[2]==1){score=-500;}// 1 1 1
+
+        //score - 95
+
+        if (i[0]==2 && i[1]==2 && i[2]==1){score=-95;}// 2 2 1
+        if (i[0]==1 && i[1]==2 && i[2]==2){score=-95;}// 1 2 2
+        if (i[0]==2 && i[1]==1 && i[2]==2){score=-95;}// 2 1 2
+
+
+        //score -10
+        if (i[0]==1 && i[1]==1 && i[2]==0){score=-10;}//1 1 0
+        if (i[0]==0 && i[1]==1 && i[2]==1){score=-10;}//0 1 1
+        if (i[0]==1 && i[1]==0 && i[2]==1){score=-10;}//1 0 1
+
+        //score -1
+        if (i[0]==0 && i[1]==1 && i[2]==0){score=-1;}//0 1 0
+        if (i[0]==0 && i[1]==0 && i[2]==1){score=-1;}//0 0 1
+        if (i[0]==1 && i[1]==0 && i[2]==0){score=-1;}//1 0 0
+
+
+
+        if (i[0]==0 && i[1]==0 && i[2]==0){score=0;}// 0 0 0
+
+        //score 0
+
+        if (i[0]==2 && i[1]==0 && i[2]==1){score=0;}// 2 0 1
+        if (i[0]==1 && i[1]==0 && i[2]==2){score=0;}// 1 0 2
+        if (i[0]==0 && i[1]==1 && i[2]==2){score=0;}// 0 1 2
+        if (i[0]==2 && i[1]==1 && i[2]==0){score=0;}// 2 1 0
 
         return score;
     }
@@ -115,6 +147,91 @@ public class CalculateScore {
         }
 
     return score;}
+
+    public int calculateColumn(Cell[] [] cellsGameField,int column){
+        int score=0;
+        int[] line = new int[cellsGameField.length];
+
+        for (int i = 0; i <cellsGameField.length ; i++) {
+
+            Cell cell = cellsGameField[i][column];
+
+            line[i]=cell.getContent();
+
+        }
+
+        score=calculateLineVersion2(line,score);
+
+        return score;
+    }
+
+    public int calculateRow(Cell[] [] cellsGameField,int row){
+        int score = 0;
+        int[] line = new int[cellsGameField.length];
+
+        for (int j = 0; j <cellsGameField.length ; j++) {
+
+            Cell cell = cellsGameField[row][j];
+
+            line[j]=cell.getContent();
+
+        }
+
+        score=calculateLineVersion2(line,score);
+
+        return score;
+    }
+
+    public int calculateDiagonal(Cell[] [] cellsGameField){
+        int score=0;
+        int count=0;
+        int[] line = new int[cellsGameField.length];
+
+        for (int i = 0; i <cellsGameField.length ; i++) {
+
+            for (int j = 0; j <cellsGameField.length ; j++) {
+
+                if (i==j){
+
+                    Cell cell = cellsGameField[i][j];
+                    line[count]=cell.getContent();
+                    count+=1;
+
+                }
+            }
+
+        }
+
+        score=calculateLineVersion2(line,score);
+        return score;
+    }
+
+
+    public int calculateReverseDiagonal(Cell[] [] cellsGameField){
+        int score=0;
+
+        int[] line = new int[cellsGameField.length];
+        for (int i = 0; i <cellsGameField.length ; i++) {
+
+            for (int j = 0; j <cellsGameField.length ; j++) {
+                int diagonal= i+j;
+                if (diagonal== (cellsGameField.length-1) ){
+                    Cell cell = cellsGameField[i][j];
+                    line[i]=cell.getContent();
+
+
+                }
+
+            }
+
+        }
+
+        score=calculateLineVersion2(line,score);
+        return score;
+    }
+
+
+
 
     public int calculateColumn(Cell[] [] cellsGameField,int column, int player){
 

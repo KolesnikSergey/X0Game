@@ -14,9 +14,9 @@ public class CalculateScoreTest {
     public void testCalculateScore() throws Exception{
 
         int [][] gameFieldField = {
-                {0,1,2},
-                {0,1,2},
-                {0,0,2}
+                {0,0,2},
+                {0,1,0},
+                {1,0,0}
         };
         CalculateScore calculateScore = new CalculateScore();
         Cell[][] cellsField = generateCellsField(gameFieldField);
@@ -25,7 +25,7 @@ public class CalculateScoreTest {
 
         int score = calculateScore.calculateScore(cellsField,player);
 
-        assertEquals(-100, score);
+        assertEquals(0, score);
 
 
 
@@ -34,19 +34,54 @@ public class CalculateScoreTest {
     }
 
     @Test
+    public void testDiagonal()throws Exception{
+        int [][] gameFieldField = {
+                {1,0,0},
+                {0,2,0},
+                {0,0,1}
+        };
+        CalculateScore calculateScore = new CalculateScore();
+        Cell[][] cellsField = generateCellsField(gameFieldField);
+
+
+        int score = calculateScore.calculateDiagonal(cellsField);
+
+        assertEquals(95, score);
+
+    }
+
+
+    @Test
+    public void testReverseDiagonal()throws Exception{
+        int [][] gameFieldField = {
+                {0,0,1},
+                {0,2,0},
+                {1,0,0}
+        };
+        CalculateScore calculateScore = new CalculateScore();
+        Cell[][] cellsField = generateCellsField(gameFieldField);
+
+
+        int score = calculateScore.calculateReverseDiagonal(cellsField);
+
+        assertEquals(95, score);
+
+    }
+
+    @Test
     public void testCalculateColumn() throws Exception{
         int [][] gameFieldField = {
+                {0,2,0},
                 {0,0,0},
-                {0,1,0},
-                {0,1,0}
+                {0,2,0}
         };
         CalculateScore calculateScore = new CalculateScore();
         Cell[][] cellsField = generateCellsField(gameFieldField);
         int player =1;
         int column = 1;
-        int score = calculateScore.calculateColumn(cellsField,column,player);
+        int score = calculateScore.calculateColumn(cellsField,column);
 
-        assertEquals(-10, score);
+        assertEquals(10, score);
 
     }
     @Test()
@@ -55,15 +90,15 @@ public class CalculateScoreTest {
        int [][] gameFieldField = {
                 {2,2,2},
                 {0,0,0},
-                {0,2,0}
+                {0,0,0}
         };
         CalculateScore calculateScore = new CalculateScore();
         Cell[][] cellsField = generateCellsField(gameFieldField);
         int player =1;
         int row = 0;
-        int score = calculateScore.calculateRow(cellsField,row,player);
+        int score = calculateScore.calculateRow(cellsField,row);
 
-        assertEquals(130, score);
+        assertEquals(500, score);
     }
     @Test
     public void testCalculateLine() throws Exception {
