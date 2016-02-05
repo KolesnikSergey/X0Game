@@ -13,13 +13,13 @@ public class CalculateScoreTest {
     @Test
     public void testCalculateScore() throws Exception{
 
-        int [][] gameFieldField = {
-                {0,0,2},
+        int [][] gameField = {
+                {2,0,0},
                 {0,1,0},
-                {1,0,0}
+                {0,0,1}
         };
         CalculateScore calculateScore = new CalculateScore();
-        Cell[][] cellsField = generateCellsField(gameFieldField);
+        Cell[][] cellsField = generateCellsField(gameField);
         int player =1;
         int column = 1;
 
